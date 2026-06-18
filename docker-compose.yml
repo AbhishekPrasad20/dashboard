@@ -40,7 +40,7 @@ services:
     build:
       context: ./frontend
       args:
-        - VITE_API_URL=http://localhost:5000/api # Change 'localhost' to your server's public IP or Domain for production
+        - VITE_API_URL=${VITE_API_URL:-http://localhost:5000/api} # Change 'localhost' to your server's public IP or Domain for production
     container_name: crm-frontend
     restart: unless-stopped
     depends_on:
